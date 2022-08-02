@@ -1,12 +1,10 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import App from './App';
-import NavBar from './components/NavBar';
+import App from './components/App';
+import "./styles.scss";
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
-root.render(<>
-    <NavBar />
-    <App />
-</>);
+root.render(<App />);
+
 
 
