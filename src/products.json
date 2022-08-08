@@ -1,0 +1,47 @@
+[
+    {
+        "id": 1,
+        "nombre": "producto uno",
+        "categoria": "prod1",
+        "description": "lorem voluptatibus quia asperiores maiores laudantium facere? Doloremque vel illo, beatae facere dicta tempora veritatis tempore temporibus.",
+        "price": 450,
+        "stock": 300,
+        "imageUrl":"" 
+    },
+    {
+        "id": 2,
+        "nombre": "producto dos",
+        "categoria": "prod2",
+        "description": "lorem voluptatibus quia asperiores maiores laudantium facere? Doloremque vel illo, beatae facere dicta tempora veritatis tempore temporibus.",
+        "price": 450,
+        "stock": 179,
+        "imageUrl":""
+    },
+    {
+        "id": 3,
+        "nombre": "producto tres",
+        "categoria": "prod3",
+        "description": "lorem voluptatibus quia asperiores maiores laudantium facere? Doloremque vel illo, beatae facere dicta tempora veritatis tempore temporibus.",
+        "price": 450,
+        "stock": 157,
+        "imageUrl":""
+    },
+    {
+        "id": 4,
+        "nombre": "producto cuatro",
+        "categoria": "prod4",
+        "description": "lorem voluptatibus quia asperiores maiores laudantium facere? Doloremque vel illo, beatae facere dicta tempora veritatis tempore temporibus.",
+        "price": 450,
+        "stock": 20,
+        "imageUrl":""
+    },
+    {
+        "id": 5,
+        "nombre": "producto cinco",
+        "categoria": "prod5",
+        "description": "lorem voluptatibus quia asperiores maiores laudantium facere? Doloremque vel illo, beatae facere dicta tempora veritatis tempore temporibus.",
+        "price": 450,
+        "stock": 350,
+        "imageUrl":""
+    }
+]

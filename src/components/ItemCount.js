@@ -21,7 +21,7 @@ function ItemCount() {
     function resetCont() {
         setContador(0)
     }
-    console.log(contador);
+    
     return (
 
         <>
