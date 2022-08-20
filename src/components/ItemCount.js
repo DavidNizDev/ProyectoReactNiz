@@ -1,36 +1,27 @@
 import { useState } from "react";
 
-function ItemCount() {
+const ItemCount = ({ estadoPadre, onAdd, stock, initial }) => {
     const [contador, setContador] = useState(0)
+    const [confirmed, setConfirmed] = useState(false)
 
-
-    function sumaCont() {
-        if (contador < 5) {
-            setContador(contador + 1);
-        } else {
-            alert("max stock");
-        }
+    const sumaCont = () => {
+        setContador(contador + 1);
+    }
+    const restaCont = () => {
+        setContador(contador - 1);
+    }
+    const confirmar = () => {
+        onAdd(contador)
     }
 
-
-    function restaCont() {
-        if (contador > 0) {
-                    setContador(contador - 1);
-        }
-    }
-    function resetCont() {
-        setContador(0)
-    }
-    
     return (
 
-        <>
-            <h2>Stock: 5</h2>
+        <div>
             <h3>El contador va: {contador}</h3>
             <button onClick={sumaCont}>Add</button>
-            <button onClick={resetCont}>Reset</button>
-            <button onClick={restaCont}>Rest</button>
-        </>
+            <button onClick={confirmar}>Confirmar</button>
+            <button onClick={restaCont}>Remove</button>
+        </div>
     )
 }
 export default ItemCount;

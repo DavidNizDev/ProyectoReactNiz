@@ -3,9 +3,11 @@ import ItemList from "./ItemList";
 import { products } from "../products"
 import { useEffect, useState } from "react";
 import { promesa } from "../promesa";
+import { useParams } from "react-router-dom";
 
 function ItemListContainer({ greeting }) {
-
+    const params = useParams();
+    console.log(params);
     const [listProduct, setListproduct] = useState([]);
     useEffect(() => {
         promesa(products)

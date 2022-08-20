@@ -1,7 +1,7 @@
 export const products = [
     {
         id: 1,
-        nombre: "producto uno",
+        title: "producto uno",
         categoria: "cat1",
         description: "lorem voluptatibus quia asperiores maiores laudantium facere? Doloremque vel illo, beatae facere dicta tempora veritatis tempore temporibus.",
         price: 450,
@@ -10,7 +10,7 @@ export const products = [
     },
     {
         id: 2,
-        nombre: "producto dos",
+        title: "producto dos",
         categoria: "cat2",
         description: "lorem voluptatibus quia asperiores maiores laudantium facere? Doloremque vel illo, beatae facere dicta tempora veritatis tempore temporibus.",
         price: 3450,
@@ -19,7 +19,7 @@ export const products = [
     },
     {
         id: 3,
-        nombre: "producto tres",
+        title: "producto tres",
         categoria: "cat3",
         description: "lorem voluptatibus quia asperiores maiores laudantium facere? Doloremque vel illo, beatae facere dicta tempora veritatis tempore temporibus.",
         price: 430,
@@ -28,7 +28,7 @@ export const products = [
     },
     {
         id: 4,
-        nombre: "producto cuatro",
+        title: "producto cuatro",
         categoria: "cat4",
         description: "lorem voluptatibus quia asperiores maiores laudantium facere? Doloremque vel illo, beatae facere dicta tempora veritatis tempore temporibus.",
         price: 531,
@@ -37,7 +37,7 @@ export const products = [
     },
     {
         id: 5,
-        nombre: "producto cinco",
+        title: "producto cinco",
         categoria: "cat5",
         description: "lorem voluptatibus quia asperiores maiores laudantium facere? Doloremque vel illo, beatae facere dicta tempora veritatis tempore temporibus.",
         price: 344,
