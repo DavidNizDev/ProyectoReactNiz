@@ -1,20 +1,32 @@
+import { useContext, useState } from "react"
 import ItemCount from "./ItemCount"
-import { useContext } from "react"
-import { contexto } from "./CustomProvider"
+import { CartContext } from "../context/CartContext"
 
-const ItemDetail = ({ item }) => {
 
-  const { agregarProducto } = useContext(contexto)
-  const onAdd = (contador) => {
-    item.cantidad = contador
-    agregarProducto(item)
+const ItemDetail = ({ detalle }) => {
+
+  const [qty, setQty] = useState(1)
+
+  const { isInCart, addItem } = useContext(CartContext)
+
+  const onAdd = () => {
+    isInCart(detalle.id)
+    addItem(detalle, qty)
   }
   return (
     <>
-      <h1>{item.title}</h1>
-      <img className="detailImage" src={item.image} alt="" />
-      <p>{item.description}</p>
-      <ItemCount onAdd={onAdd} />
+      <div>ItemDetail
+        <img src={detalle.pictureURL} alt={detalle.name}></img>
+      </div>
+      <div>
+        <h3 className='detailTitle'>{detalle.name}</h3>
+        <h3>Categoria: {detalle.category}</h3>
+        <h3>${detalle.price}</h3>
+        <h3>Unidades disponibles: {detalle.stock}</h3>
+      </div>
+      <div>
+        <ItemCount qty={qty} setQty={setQty} stock={detalle.stock} onAdd={onAdd} />
+      </div>
     </>
   )
 }

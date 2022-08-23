@@ -1,22 +1,31 @@
-import { promesa } from "../promesa";
 import { useEffect, useState } from "react";
-import ItemDetail from "./ItemDetail";
 import { useParams } from "react-router-dom";
+import ItemDetail from "./ItemDetail"
+import { products } from "../products";
 /*       <ItemDetail itemDetail={itemDetail} />
  */
 
 const ItemDetailContainer = () => {
-  const params = useParams();
-  console.log(params);
-  const [itemDetail, setItemDetail] = useState()
+  const [detalle, setDetalle] = useState({})
+  const { productId } = useParams();
+
   useEffect(() => {
-    promesa(itemDetail)
-      .then(data => setItemDetail(data))
+
+    setTimeout(() => {
+
+      fetch(products)
+        .then(data => setDetalle(data.find(x => x.id === productId)))
+
+    }, 500)
+
   }, [])
 
   return (
     <>
-      <div>ItemDetailCOnteiner</div>
+      <div>ItemDetailConteiner</div>
+      <div>
+        <ItemDetail detalle={detalle} />
+      </div>
     </>
   )
 }

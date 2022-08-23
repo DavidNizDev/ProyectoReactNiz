@@ -1,10 +1,10 @@
-import Nav from "./Nav"
+import NavBar from "./NavBar"
 
 const Footer = () => {
 
     return (
         <footer>
-            <Nav type="footer"/>
+            <NavBar type="footer"/>
         </footer>
     )
 }

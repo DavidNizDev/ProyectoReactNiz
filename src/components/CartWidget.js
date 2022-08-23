@@ -1,19 +1,19 @@
-
 import { useContext } from "react"
 import { NavLink } from "react-router-dom"
-import { contexto } from "./CustomProvider"
+import { CartContext } from "../context/CartContext"
+
 
 
 const CartWidget = () => {
 
-    const { cantidad } = useContext(contexto)
+
+    const { getItemQty } = useContext(CartContext)
 
     return (
-        <NavLink to="/cart">
-            <span className="material-symbols-outlined">
+        <NavLink to="/cart" content={getItemQty()}>
+            <span className="material-symbols-outlined" >
                 shopping_cart
             </span>
-            {cantidad}
         </NavLink>
     )
 }

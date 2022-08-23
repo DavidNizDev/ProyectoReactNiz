@@ -4,8 +4,8 @@ const Item = ({ productito }) => {
 
   return (
     <article className="item">
-      <h2>{productito.nombre}</h2>
-      <img src={productito.imageUrl} width="150px" />
+      <h2>{productito.name}</h2>
+      <img src={productito.pictureURL} width="150px" />
       <div>
         <h3>Descripción:</h3>{productito.description}
         <h3>Precio:</h3>{productito.price}

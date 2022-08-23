@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom"
-import Nav from "./Nav"
+import NavBar from "./NavBar"
 
 const Header = () => {
   return (
@@ -7,7 +7,7 @@ const Header = () => {
       <Link to="/">
         <h1 className="header__titulo" >Titulo</h1>
       </Link>
-      <Nav type="header" />
+      <NavBar type="header" />
     </header>
   )
 }

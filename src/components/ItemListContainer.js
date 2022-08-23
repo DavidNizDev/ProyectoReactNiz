@@ -1,25 +1,32 @@
-import ItemCount from "./ItemCount";
 import ItemList from "./ItemList";
 import { products } from "../products"
 import { useEffect, useState } from "react";
 import { promesa } from "../promesa";
 import { useParams } from "react-router-dom";
+import Template from "./Template";
 
-function ItemListContainer({ greeting }) {
-    const params = useParams();
-    console.log(params);
+
+function ItemListContainer() {
     const [listProduct, setListproduct] = useState([]);
+
+    const { categorias } = useParams();
+
     useEffect(() => {
         promesa(products)
-            .then(data => setListproduct(data))
+            .then((data) => {
+                if (!categorias) {
+                    setListproduct(data)
+                } else {
+                    setListproduct(data.filter(x => x.category === categorias))
+                }
+            })
     }, [])
 
     return (
         <>
-            <h2>Item List Container H2 Function</h2>
-            <h2>{greeting}</h2>
-            <ItemCount />
-            <ItemList listProduct={listProduct} />
+            <Template titulo="Catalogo" subtitulo="Productos principales">
+                <ItemList listProduct={listProduct} />
+            </Template>
         </>
     );
 }
