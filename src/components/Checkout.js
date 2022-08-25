@@ -8,7 +8,7 @@ function Checkout() {
         name: '',
         lastname: '',
         email: '',
-        address: '',
+        address: ''
     })
 
     const [submit, setSubmit] = useState(false)
@@ -16,7 +16,6 @@ function Checkout() {
     const { cart, getItemPrice } = useContext(CartContext)
 
     const navigate = useNavigate()
-
 
     const handlerChangeInput = (e) => {
         setCostumer({
@@ -37,8 +36,6 @@ function Checkout() {
         setSubmit(true)
     }
 
-
-
     if (cart.length === 0) {
 
         setTimeout(() => {
@@ -48,7 +45,7 @@ function Checkout() {
         return (
             <div>
                 <h1>No deberías estár acá, no tenés productos en el carrito.</h1>
-                <h2>Serás redirigido a la Home en 3 segundos...</h2>
+                <h2>Serás redirigido al Inicio en 3 segundos...</h2>
             </div>
         )
     }

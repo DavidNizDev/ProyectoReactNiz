@@ -1,27 +1,30 @@
-import { useState } from "react";
+import React from "react"
 
-const ItemCount = ({ contadorPadre, setContadorPadre, stock, initial }) => {
-    const [contadorHijo, setContadorHijo] = useState(0)
-    const [confirmed, setConfirmed] = useState(false)
+function ItemCount({ qty, setQty, stock, onAdd }) {
 
-    const sumaCont = () => {
-        setContadorHijo(contadorHijo + 1);
+    const handlerMinus = () => {
+        if (qty > 1) {
+            setQty(qty - 1)
+        }
     }
-    const restaCont = () => {
-        setContadorHijo(contadorHijo - 1);
-    }
-    const confirmar = () => {
-        setContadorPadre(contadorHijo)
+
+    const handlerPlus = () => {
+        if (qty < stock) {
+            setQty(qty + 1)
+        }
     }
 
     return (
-
-        <div>
-            <h3>El contador va: {contadorHijo}</h3>
-            <button onClick={sumaCont}>Add</button>
-            <button onClick={confirmar}>Confirmar</button>
-            <button onClick={restaCont}>Remove</button>
-        </div>
+        <>
+            <div className=''>
+                <button onClick={handlerMinus}>-</button>
+                <div>
+                    <p>{qty}</p>
+                </div>
+                <button onClick={handlerPlus}>+</button>
+            </div>
+            <button className='' onClick={() => { onAdd() }}>Agregar al carrito</button>
+        </>
     )
 }
 export default ItemCount;

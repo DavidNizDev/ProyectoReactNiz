@@ -1,13 +1,22 @@
-import { Route, Routes } from "react-router-dom"
-import Item from "./Item"
-import ItemDetailContainer from "./ItemDetailContainer"
+import Item from "./Item";
+import React from "react";
 
-const ItemList = ({ listProduct }) => {
+const ItemList = ({ listaProduct }) => {
   return (
-    <section className="items">
-      {listProduct.map(productito => <Item productito={productito} key={productito.id} />)}
-
-    </section>
+    <div className='items'>
+      {listaProduct.map((element, index) => {
+        return <Item key={index} item={element} />
+      })}
+    </div>
   )
 }
+
 export default ItemList
+/* const ItemList = ({ listProduct }) => {
+  return (
+    <div className="items">
+      {listProduct.map(productito => <Item productito={productito} key={productito.id} />)}
+
+    </div>
+  )
+} */

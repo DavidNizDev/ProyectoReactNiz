@@ -1,9 +1,10 @@
 import { useContext, useState } from "react"
 import ItemCount from "./ItemCount"
 import { CartContext } from "../context/CartContext"
+import React from "react"
 
 
-const ItemDetail = ({ detalle }) => {
+function ItemDetail({ detalle }) {
 
   const [qty, setQty] = useState(1)
 
@@ -14,7 +15,7 @@ const ItemDetail = ({ detalle }) => {
     addItem(detalle, qty)
   }
   return (
-    <>
+    <div>
       <div>ItemDetail
         <img src={detalle.pictureURL} alt={detalle.name}></img>
       </div>
@@ -27,7 +28,7 @@ const ItemDetail = ({ detalle }) => {
       <div>
         <ItemCount qty={qty} setQty={setQty} stock={detalle.stock} onAdd={onAdd} />
       </div>
-    </>
+    </div>
   )
 }
-export default ItemDetail
+export default ItemDetail;

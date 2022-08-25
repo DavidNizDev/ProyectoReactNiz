@@ -1,31 +1,36 @@
+import React from "react";
 import ItemList from "./ItemList";
-import { products } from "../products"
 import { useEffect, useState } from "react";
-import { promesa } from "../promesa";
 import { useParams } from "react-router-dom";
 import Template from "./Template";
 
 
-function ItemListContainer() {
-    const [listProduct, setListproduct] = useState([]);
+function ItemListContainer({ }) {
+    const [listProduct, setListProduct] = useState([]);
 
     const { categorias } = useParams();
 
+    const urlJson = "https://mocki.io/v1/f8cf64ad-a41d-410d-8468-0b3ddcd4269d"
+
     useEffect(() => {
-        promesa(products)
-            .then((data) => {
-                if (!categorias) {
-                    setListproduct(data)
-                } else {
-                    setListproduct(data.filter(x => x.category === categorias))
+        setTimeout(() => {
+            fetch(urlJson)
+                .then((respuesta) => respuesta.json())
+                .then((array) => {
+                    if (!categorias) {
+                        setListProduct(array)
+                    } else {
+                        setListProduct(array.filter(x => x.category === categorias))
+                    }
                 }
-            })
-    }, [])
+                )
+        }, 300)
+    }, [categorias])
 
     return (
         <>
             <Template titulo="Catalogo" subtitulo="Productos principales">
-                <ItemList listProduct={listProduct} />
+                <ItemList listaProduct={listProduct} />
             </Template>
         </>
     );
