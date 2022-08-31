@@ -3,34 +3,66 @@ import ItemList from "./ItemList";
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import Template from "./Template";
+import { db } from "../firebaseApp";
+import { collection, getDocs, query, where } from "firebase/firestore";
+
 
 
 function ItemListContainer({ }) {
     const [listProduct, setListProduct] = useState([]);
 
-    const { categorias } = useParams();
-
-    const urlJson = "https://mocki.io/v1/f8cf64ad-a41d-410d-8468-0b3ddcd4269d"
+    const { id } = useParams();
+    console.log(id);
 
     useEffect(() => {
-        setTimeout(() => {
-            fetch(urlJson)
-                .then((respuesta) => respuesta.json())
-                .then((array) => {
-                    if (!categorias) {
-                        setListProduct(array)
-                    } else {
-                        setListProduct(array.filter(x => x.category === categorias))
-                    }
-                }
-                )
-        }, 300)
-    }, [categorias])
+        const productosCollection = collection(db, "productos");
+        if (!id) {
+            const consulta = getDocs(productosCollection)
+
+            consulta
+                .then(res => {
+                    const productos = res.docs.map(doc => {
+                        const productoConId = {
+                            ...doc.data()
+                        }
+                        productoConId.id = doc.id
+                        return {
+                            productoConId
+                        }
+                    })
+                    setListProduct(productos)
+                })
+                .catch(err => {
+                    console.log(err)
+                })
+        } else {
+            const filtroCategory = query(productosCollection, where("category", "==", id))
+            const consulta = getDocs(filtroCategory)
+
+
+            consulta
+                .then(res => {
+                    const productos = res.docs.map(doc => {
+                        const productoConId = {
+                            ...doc.data()
+                        }
+                        productoConId.id = doc.id
+                        return {
+                            productoConId
+                        }
+                    })
+                    setListProduct(productos)
+                })
+                .catch(err => {
+                    console.log(err)
+                })
+        }
+    }, [id])
 
     return (
         <>
             <Template titulo="Catalogo" subtitulo="Productos principales">
-                <ItemList listaProduct={listProduct} />
+                <ItemList listProduct={listProduct} />
             </Template>
         </>
     );

@@ -1,7 +1,6 @@
 import { useContext, useState } from "react"
 import ItemCount from "./ItemCount"
 import { CartContext } from "../context/CartContext"
-import React from "react"
 
 
 function ItemDetail({ detalle }) {

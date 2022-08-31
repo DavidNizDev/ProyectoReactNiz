@@ -26,11 +26,3 @@ const NavBar = ({ type }) => {
 }
 export default NavBar
 
-/* Warning: Maximum update depth exceeded. This can happen when a component calls setState inside useEffect, but useEffect either doesn't have a dependency array, or one of the dependencies changes on every render.
-    at NavBar (http://localhost:3000/static/js/bundle.js:1472:5)
-    at header
-    at Header
-    at MyProvider (http://localhost:3000/static/js/bundle.js:1691:5)
-    at Router (http://localhost:3000/static/js/bundle.js:41595:15)
-    at BrowserRouter (http://localhost:3000/static/js/bundle.js:40404:5)
-    at App */

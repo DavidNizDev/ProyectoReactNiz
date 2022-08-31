@@ -5,6 +5,7 @@ import Main from "./components/Main";
 import { createContext } from "react";
 import CustomProvider from "./components/CustomProvider";
 import MyProvider from "./context/CartContext";
+import "./firebaseApp.js";
 
 const context = createContext();
 
