@@ -1,17 +1,27 @@
+import { useContext } from "react";
 import { createContext, useState } from "react";
 
 export const contexto = createContext();
 const { Provider } = contexto;
 
+export const useCarrito = () => {
+    const contextValue = useContext(contexto)
+    return contextValue
+}
 
 const CustomProvider = (props) => {
 
     const [cantidad, setCantidad] = useState(0);
-    const [carrito, setCarrito] = useState([]);
+    const [carrito, setCarrito] = useState([
+        {
+            id: 1,
+            nombre: "Prod 1",
+            precio: 342
+        }
+    ]);
 
     const agregarProducto = (producto) => {
         carrito.push()
-        //si estaEnCarrito() entonces...
         setCantidad(cantidad + producto.cantidad)
     }
 
@@ -22,7 +32,6 @@ const CustomProvider = (props) => {
     }
 
     const estaEnCarrito = (id) => {
-        //retrun true/false
     }
 
     const valorDelContexto = {

@@ -1,16 +1,21 @@
 import React, { useContext, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { CartContext } from '../context/CartContext'
+import { db } from "../firebaseApp";
+import { collection, addDoc } from "firebase/firestore";
+import { useCarrito } from "./CustomProvider";
 
 function Checkout() {
 
+    const { carrito } = useCarrito()
+    console.log(carrito);
     const [costumer, setCostumer] = useState({
         name: '',
         lastname: '',
         email: '',
         address: ''
     })
-
+    console.log(costumer);
     const [submit, setSubmit] = useState(false)
 
     const { cart, getItemPrice } = useContext(CartContext)
@@ -26,11 +31,15 @@ function Checkout() {
 
     const handlerSubmit = (e) => {
         e.preventDefault()
+        const orderCollection = collection(db, "order");
+        const consulta = addDoc(orderCollection, order)
 
         const order = {
-            items: cart,
+            items: carrito,
             buyer: { ...costumer },
             price: getItemPrice(),
+            date: new Date(),
+            total: 0
         }
 
         setSubmit(true)
@@ -40,7 +49,7 @@ function Checkout() {
 
         setTimeout(() => {
             navigate('/')
-        }, 3000)
+        }, 500)
 
         return (
             <div>

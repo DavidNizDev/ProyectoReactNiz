@@ -6,17 +6,16 @@ import Template from "./Template"
 import Checkout from "./Checkout"
 
 const Cart = () => {
-
   const [checkout, setCheckout] = useState(false)
   const [contadorPadre, setContadorPadre] = useState(0)
   const { cart, deleteItem, emptyCart } = useContext(CartContext)
 
-  const handleClick = (e) => {
+/*   const handleClick = (e) => {
     console.log(e.target);
   }
   const handleChange = (e) => {
     console.log(e.target);
-  }
+  } */
 
   if (cart.length > 0) {
     return (
