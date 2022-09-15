@@ -49,22 +49,23 @@ La visualización de los productos en el home como así también los filtrados p
 
 ## Estructura archivos
 
-![image00](https://i.im.ge/2022/09/15/1lqmSP.carpetas.png)
+[![1lqmSP.carpetas](https://i.im.ge/2022/09/15/1l7OeW.1lqmSP-carpetas.png)](https://im.ge/i/1l7OeW)
+
 
 ## Capturas
 
 Home
-![image00](https://i.im.ge/2022/09/15/1laOyK.home.jpg)
+[![1laOyK.home](https://i.im.ge/2022/09/15/1l7Ugy.1laOyK-home.jpg)](https://im.ge/i/1l7Ugy)
 
 Detalle de producto
-![image00](https://i.im.ge/2022/09/15/1lqRrJ.detalle-producto.jpg)
+[![1lqRrJ.detalle-producto](https://i.im.ge/2022/09/15/1l79JF.1lqRrJ-detalle-producto.jpg)](https://im.ge/i/1l79JF)
 
 Carrito
-![image00](https://i.im.ge/2022/09/15/1lsPt9.cart.jpg)
+[![1lsPt9.cart](https://i.im.ge/2022/09/15/1l7wN9.1lsPt9-cart.jpg)](https://im.ge/i/1l7wN9)
 
 Gracias
-![image00](https://i.im.ge/2022/09/15/1lsRtp.gracias.jpg)
+[![1lsRtp.gracias](https://i.im.ge/2022/09/15/1l76fX.1lsRtp-gracias.jpg)](https://im.ge/i/1l76fX)
 
 Categoria "Mates"
-![image00](https://i.im.ge/2022/09/15/1lqEIT.categoria-mates.jpg)
+[![1lqEIT.categoria-mates](https://i.im.ge/2022/09/15/1l7t5h.1lqEIT-categoria-mates.jpg)](https://im.ge/i/1l7t5h)
 
