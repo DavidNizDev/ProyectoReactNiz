@@ -1,78 +1,68 @@
+[![Netlify Status](https://api.netlify.com/api/v1/badges/16e3ab32-0955-4c60-ba45-9cfca05564f0/deploy-status)](https://app.netlify.com/sites/tiendalaptops/deploys)
 
+# Tienda virtual creada durante la cursada de React JS en CoderHouse
 
+Este es un Ecommerce, en el cual se simula una tienda de articulos basados en el animal capibara o carpincho.
 
+La navegación incluye: 
++ Home con productos
++ Pantalla de producto con detalle
++ Pantalla de categorías
++ Pantalla de carrito con formulario de cliente.
++ Pantalla de gracias
 
+Tecnologías y librerías:
++ Interfaz realizada con ReactJS - Create React App
++ Estilos con Bootstrap
++ Ruteo con React Router Dom
++ Base de datos con Firebase
++ Loaders de react-spinners
 
+## Link
 
+La aplicación se puede visualizar en el siguiente [Link]()
 
+## Instalación
 
-# Getting Started with Create React App
+Despues de clonar el repositorio, ejecutar "npm install" para instalar las dependencias
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Ejecutar Proyecto
 
-## Available Scripts
+    1. Ejecute "npm start" en su proyecto para iniciar.
+    2. No son necesarias credenciales para ejecutarlo.
 
-In the project directory, you can run:
+## Detalles del proyecto
 
-### `npm start`
+El usuario puede agregar un producto al carrito desde la pantalla de detalle del producto.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+La barra de navegación contiene el ícono del carrito que muestra la cantidad de items que el usuario ha agregado.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+Una vez realizada la compra se le entrega al usuario un número de pedido.(Al cual se le podría dar la funcionalidad de seguimiento en el futuro)
 
-### `npm test`
+Los datos en el formulario que se les requiere al cliente para finalizar la compra son subidos a la base de datos (Firestore) con el nombre de colección "order".
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Las categorías del nav bar se cargan dinamicamente de la base de datos (Firestore)
 
-### `npm run build`
+La visualización de los productos en el home como así también los filtrados por categorías, son dinamicamente extraídos desde la base de datos (Firestore)
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Estructura
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+![image00]()
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Capturas
 
-### `npm run eject`
+Home
+![image00](http://alejomann.com/coder/img/home.png)
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+Detalle de producto
+![image00](http://alejomann.com/coder/img/detalle.png)
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+Carrito
+![image00](http://alejomann.com/coder/img/carrito.png)
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+Gracias
+![image00](http://alejomann.com/coder/img/gracias.png)
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Seguimiento
+![image00](http://alejomann.com/coder/img/seguimiento1.png)
+![image00](http://alejomann.com/coder/img/seguimiento2.png)

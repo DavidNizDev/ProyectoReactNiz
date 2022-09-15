@@ -5,68 +5,81 @@ import { useParams } from "react-router-dom";
 import Template from "./Template";
 import { db } from "../firebaseApp";
 import { collection, getDocs, query, where } from "firebase/firestore";
+import { PropagateLoader } from 'react-spinners'
+import { Row, Col } from 'react-bootstrap'
 
-
-
-function ItemListContainer({ }) {
+function ItemListContainer({ greeting }) {
     const [listProduct, setListProduct] = useState([]);
+    const [loading, setLoading] = useState(true)
+    const { category } = useParams();
 
-    const { id } = useParams();
-    console.log(id);
 
     useEffect(() => {
-        const productosCollection = collection(db, "productos");
-        if (!id) {
-            const consulta = getDocs(productosCollection)
+        const collectionProductos = collection(db, "productos")
+        const consulta = getDocs(collectionProductos)
 
-            consulta
-                .then(res => {
-                    const productos = res.docs.map(doc => {
-                        const productoConId = {
-                            ...doc.data()
-                        }
-                        productoConId.id = doc.id
-                        return {
-                            productoConId
-                        }
+        if (category) {
+            const filtroDeLaConsulta = query(collectionProductos, where("category", "==", category))
+            const filtrado = getDocs(filtroDeLaConsulta)
+            filtrado
+                .then((resultado) => {
+                    const productosMapeados = resultado.docs.map((doc) => {
+                        return doc.data()
                     })
-                    setListProduct(productos)
+                    setListProduct(productosMapeados)
                 })
-                .catch(err => {
-                    console.log(err)
+                .catch((error) => {
+                    console.log(error)
+                })
+                .finally(() => {
+                    setLoading(false)
                 })
         } else {
-            const filtroCategory = query(productosCollection, where("category", "==", id))
-            const consulta = getDocs(filtroCategory)
-
-
             consulta
-                .then(res => {
-                    const productos = res.docs.map(doc => {
-                        const productoConId = {
-                            ...doc.data()
-                        }
-                        productoConId.id = doc.id
-                        return {
-                            productoConId
-                        }
-                    })
+                .then((res) => {
+                    const productos = res.docs.map((doc) => {
+                        return doc.data()
+                    });
                     setListProduct(productos)
                 })
-                .catch(err => {
-                    console.log(err)
+                .catch((error) => {
+                    console.log(error)
+                })
+                .finally(() => {
+                    setLoading(false)
                 })
         }
-    }, [id])
+    }, [category])
 
-    return (
-        <>
-            <Template titulo="Catalogo" subtitulo="Productos principales">
+    if (loading) {
+        return <div className="d-flex justify-content-evenly">
+            <PropagateLoader color="rgb(161, 21, 3)" />
+        </div>
+    } else {
+        return <div>
+            <Row>
+                <Col xl={6} className="mx-auto mt-5 text-center"><h1>{greeting}</h1>
+                    {(!category) ? <Template titulo="Productos principales"></Template> : <Template titulo={category}></Template>}
+                </Col>
+            </Row>
+            <div>
                 <ItemList listProduct={listProduct} />
-            </Template>
-        </>
-    );
-}
+            </div>
+        </div>
+    }
 
+    /*     return (
+            <div>
+                <Row>
+                    <Col xl={6} className="mx-auto mt-5 text-center"><h1>{greeting}</h1>
+                        {(!category) ? <Template titulo="Productos principales"></Template> : <Template titulo={category}></Template>}
+                    </Col>
+                </Row>
+                <div>
+                    <ItemList listProduct={listProduct} />
+                </div>
+            </div>
+        ); */
+}
 
 export default ItemListContainer;

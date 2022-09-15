@@ -1,20 +1,20 @@
-import { useContext } from "react"
-import { Link } from "react-router-dom"
-import { CartContext } from "../context/CartContext"
-
-
+import { useContext } from "react";
+import { CartContext } from "../context/CartContext";
+import { Badge } from '@mui/material';
+import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
+import { Link } from "react-router-dom";
 
 const CartWidget = () => {
-
-
-    const { getItemQty } = useContext(CartContext)
-
-    return (
-        <Link to="/cart" content={getItemQty()}>
-            <span className="material-symbols-outlined" >
-                shopping_cart
-            </span>
-        </Link>
-    )
+  const { cantidad } = useContext(CartContext)
+  return (
+    <div>
+      <Link to="/cart">
+        <Badge badgeContent={cantidad} style={{ color: 'brown' }}>
+          <ShoppingCartIcon style={{ color: 'brown' }} />
+        </Badge>
+      </Link>
+    </div >
+  )
 }
 export default CartWidget
+

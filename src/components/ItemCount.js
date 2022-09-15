@@ -16,14 +16,14 @@ function ItemCount({ qty, setQty, stock, onAdd }) {
 
     return (
         <>
-            <div className=''>
-                <button onClick={handlerMinus}>-</button>
+            <div className='d-flex col-xl-6 justify-content-evenly mb-3'>
+                <button className={`btn ${qty > 1 ? "btn-success" : "btn-danger"}`} onClick={handlerMinus}>-</button>
                 <div>
                     <p>{qty}</p>
                 </div>
-                <button onClick={handlerPlus}>+</button>
+                <button className={`btn ${qty < stock ? "btn-success" : "btn-danger"}`} onClick={handlerPlus}>+</button>
             </div>
-            <button className='' onClick={() => { onAdd() }}>Agregar al carrito</button>
+            <button className='btn btn-primary' onClick={() => { onAdd() }}>Agregar al carrito</button>
         </>
     )
 }

@@ -2,20 +2,16 @@ import { Link } from "react-router-dom"
 import React from "react";
 
 const Item = ({ item }) => {
-  const { productoConId } = item;
-
   return (
-    <section className="item">
-      <h2>{productoConId.name}</h2>
-      <img src={productoConId.pictureURL} width="150px" alt={productoConId.name} />
+    <div className="tarjetas col-xl-3 mx-auto my-5 d-flex flex-column align-items-center">
+      <h4><b>{item.name}</b></h4>
+      <img src={item.pictureURL} className='col-xl-10' width="150px" alt={item.name} />
       <div>
-        <h3>Descripción: {productoConId.description}</h3>
-        <h3>Categoría: {productoConId.category}</h3>
-        <h3>Precio: {productoConId.price}</h3>
-        <h3>Stock: {productoConId.stock}</h3>
-        <Link to={`/detalle/${productoConId.id}`} className="item__button">Ver detalle</Link>
+        <h4><b>Precio: </b>$ {item.price}</h4>
+        <h4><b>Disponibles:</b> {item.stock}</h4>
+        <Link to={`/detalle/${item.id}`} className="btn botonDetalle">Ver detalle</Link>
       </div>
-    </section>
+    </div>
   )
 }
 export default Item

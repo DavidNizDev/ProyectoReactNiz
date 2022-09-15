@@ -1,33 +1,32 @@
 import { useContext, useState } from "react"
 import ItemCount from "./ItemCount"
 import { CartContext } from "../context/CartContext"
+import { Row } from 'react-bootstrap'
 
-
-function ItemDetail({ detalle }) {
-
+function ItemDetail({ item }) {
   const [qty, setQty] = useState(1)
-
   const { isInCart, addItem } = useContext(CartContext)
-
   const onAdd = () => {
-    isInCart(detalle.id)
-    addItem(detalle, qty)
+    isInCart(item.id)
+    addItem(item, qty)
   }
   return (
-    <div>
-      <div>ItemDetail
-        <img src={detalle.pictureURL} alt={detalle.name}></img>
+    <Row className='detailView justify-content-center'>
+      <div className='col-xl-3 d-flex align-items-center '>
+        <img src={item.pictureURL} alt={item.name} width={250}></img>
       </div>
-      <div>
-        <h3 className='detailTitle'>{detalle.name}</h3>
-        <h3>Categoria: {detalle.category}</h3>
-        <h3>${detalle.price}</h3>
-        <h3>Unidades disponibles: {detalle.stock}</h3>
+      <div className="col-xl-3 d-flex flex-column align-items-center justify-content-center">
+        <h4 className='detailTitle'>{item.name}</h4>
+        <h3><b>$</b> {item.price}</h3>
+        <h4><b>Disponibles:</b> {item.stock}</h4>
       </div>
-      <div>
-        <ItemCount qty={qty} setQty={setQty} stock={detalle.stock} onAdd={onAdd} />
+      <div className='col-xl-3 d-flex flex-column align-items-center justify-content-center'>
+        <ItemCount qty={qty} setQty={setQty} stock={item.stock} onAdd={onAdd} />
       </div>
-    </div>
+      <div className="d-flex col-xl-9">
+        <h4>{item.description}</h4>
+      </div>
+    </Row>
   )
 }
 export default ItemDetail;

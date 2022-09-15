@@ -1,41 +1,40 @@
 import React from "react";
-import ItemDetail from "./ItemDetail"
+import ItemDetail from "./ItemDetail.js"
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { db } from "../firebaseApp";
-import { collection, getDoc, doc } from "firebase/firestore";
-
+import { collection, query, where, getDocs } from "firebase/firestore";
+import { PropagateLoader } from 'react-spinners'
 
 const ItemDetailContainer = () => {
-  const [detalle, setDetalle] = useState({})
+  const [item, setItem] = useState({})
   const { id } = useParams();
+
 
   useEffect(() => {
     const productosCollection = collection(db, "productos");
-    const referencia = doc(productosCollection, id)
-    const consulta = getDoc(referencia)
-
+    const filtroProductos = query(productosCollection, where("id", "==", id));
+    const consulta = getDocs(filtroProductos)
     consulta
       .then((res) => {
-        setDetalle(res.data())
+        const asd = res.docs[0].data()
+        setItem(asd)
+
       })
       .catch((err) => {
         console.log(err);
       })
-  }, [])
+  }, [id])
 
   return (
-    <>
-      <div>ItemDetailConteiner</div>
-      <div>
-        <ItemDetail detalle={detalle} />
-      </div>
-    </>
+    <div>
+      {Object.keys(item).length < 1
+        ? <div className="d-flex justify-content-evenly">
+          <PropagateLoader color="rgb(161, 21, 3)" />
+        </div>
+        : <ItemDetail item={item} />}
+    </div>
   )
 }
 export default ItemDetailContainer;
 
-/*       {Object.keys(detalle).length < 1
-        ? <div>ItemDetailConteiner</div>
-        : <ItemDetail detalle={detalle} />
-      } */
