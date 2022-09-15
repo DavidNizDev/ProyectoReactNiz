@@ -10,7 +10,7 @@ const Gracias = () => {
   return (
     <>
       <div className='contGracias'>
-        <p>Tu pedido fue realizado con éxito!</p>
+        <p>Tu pedido fue realizado con éxito! Gracias por tu compra!</p>
         <div className='numeroPedido'>
 
           <p>Número de pedido:<br /><b className='numPedido'>{mostrarNumeroPedido()}</b></p>

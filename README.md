@@ -33,6 +33,8 @@ Despues de clonar el repositorio, ejecutar "npm install" para instalar las depen
 
 ## Detalles del proyecto
 
+El ecommerce cuenta con 9 productos, divididos en 3 categorías, 3 productos por categoría.
+
 El usuario puede agregar un producto al carrito desde la pantalla de detalle del producto.
 
 La barra de navegación contiene el ícono del carrito que muestra la cantidad de items que el usuario ha agregado.
@@ -45,24 +47,24 @@ Las categorías del nav bar se cargan dinamicamente de la base de datos (Firesto
 
 La visualización de los productos en el home como así también los filtrados por categorías, son dinamicamente extraídos desde la base de datos (Firestore)
 
-## Estructura
+## Estructura archivos
 
-![image00]()
+![image00](https://i.im.ge/2022/09/15/1lqmSP.carpetas.png)
 
 ## Capturas
 
 Home
-![image00](http://alejomann.com/coder/img/home.png)
+![image00](https://i.im.ge/2022/09/15/1laOyK.home.jpg)
 
 Detalle de producto
-![image00](http://alejomann.com/coder/img/detalle.png)
+![image00](https://i.im.ge/2022/09/15/1lqRrJ.detalle-producto.jpg)
 
 Carrito
-![image00](http://alejomann.com/coder/img/carrito.png)
+![image00](https://i.im.ge/2022/09/15/1lsPt9.cart.jpg)
 
 Gracias
-![image00](http://alejomann.com/coder/img/gracias.png)
+![image00](https://i.im.ge/2022/09/15/1lsRtp.gracias.jpg)
 
-Seguimiento
-![image00](http://alejomann.com/coder/img/seguimiento1.png)
-![image00](http://alejomann.com/coder/img/seguimiento2.png)
+Categoria "Mates"
+![image00](https://i.im.ge/2022/09/15/1lqEIT.categoria-mates.jpg)
+
