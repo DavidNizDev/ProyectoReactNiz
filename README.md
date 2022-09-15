@@ -1,5 +1,4 @@
-[![Netlify Status](https://api.netlify.com/api/v1/badges/16e3ab32-0955-4c60-ba45-9cfca05564f0/deploy-status)](https://app.netlify.com/sites/tiendalaptops/deploys)
-
+[![Netlify Status](https://api.netlify.com/api/v1/badges/a1f426df-8a5e-43e7-a81a-841db23f6864/deploy-status)](https://app.netlify.com/sites/davidniz-react-final-coder/deploys)
 # Tienda virtual creada durante la cursada de React JS en CoderHouse
 
 Este es un Ecommerce, en el cual se simula una tienda de articulos basados en el animal capibara o carpincho.
@@ -19,8 +18,7 @@ Tecnologías y librerías:
 + Loaders de react-spinners
 
 ## Link
-
-La aplicación se puede visualizar en el siguiente [Link]()
+La aplicación se puede visualizar en el siguiente [Link](https://davidniz-react-final-coder.netlify.app/)
 
 ## Instalación
 
@@ -32,6 +30,8 @@ Despues de clonar el repositorio, ejecutar "npm install" para instalar las depen
     2. No son necesarias credenciales para ejecutarlo.
 
 ## Detalles del proyecto
+
+BUILD realizado y deployado en Netlify.
 
 El ecommerce cuenta con 9 productos, divididos en 3 categorías, 3 productos por categoría.
 
